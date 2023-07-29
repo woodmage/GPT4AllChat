@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <ApplicationIcon>AI.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Gpt4All\**" />
+    <EmbeddedResource Remove="Gpt4All\**" />
+    <None Remove="Gpt4All\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AI.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Gpt4All">
+      <HintPath>..\..\gpt4all\gpt4all\gpt4all-bindings\csharp\Gpt4All\bin\Debug\net6.0\Gpt4All.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
